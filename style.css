@@ -1,0 +1,214 @@
+body {
+  background: #0f0f0f;
+  color: #00f7ff;
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Pantalla de inicio */
+#start-screen {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#start-screen h1 {
+  font-size: 72px;
+  margin: 0;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.mode-btn {
+  background: transparent;
+  color: #00f7ff;
+  border: 2px solid #00f7ff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.mode-btn:hover {
+  background: #00f7ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f7ff;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: 150px;
+  background: #111;
+  border-right: 1px solid #00f7ff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-btn {
+  background: transparent;
+  color: #00f7ff;
+  border: 1px solid #00f7ff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s;
+}
+
+.sidebar-btn:hover {
+  background: rgba(0, 247, 255, 0.1);
+}
+
+/* Botón de regreso */
+.back-btn {
+  background: rgba(0, 247, 255, 0.1) !important;
+  border-color: #ff5555 !important;
+  color: #ff5555 !important;
+  margin-bottom: 20px !important;
+}
+
+.back-btn:hover {
+  background: rgba(255, 85, 85, 0.2) !important;
+}
+
+/* Modo Voz */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+#activate-btn, #mute-btn, #send-btn {
+  background-color: #1a1a2e;
+  color: #00f7ff;
+  padding: 12px 25px;
+  border: 2px solid #00f7ff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#activate-btn:hover, #mute-btn:hover, #send-btn:hover {
+  background-color: #00f7ff;
+  color: #000;
+}
+
+#mute-btn {
+  border-color: #ff5555;
+  color: #ff5555;
+}
+
+#mute-btn:hover {
+  background-color: #ff5555;
+  color: #000;
+}
+
+#response-box, .chat-history {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid #00f7ff;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Animación de onda */
+.wave {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.bar {
+  width: 5px;
+  height: 20px;
+  background: #00f7ff;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(2); }
+}
+
+/* Modo Chat */
+.chat-input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 12px;
+  background: #111;
+  border: 2px solid #00f7ff;
+  border-radius: 8px;
+  color: #00f7ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Mensajes de chat */
+.chat-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user-message {
+  background: rgba(0, 247, 255, 0.2);
+  margin-left: auto;
+  border: 1px solid #00f7ff;
+}
+
+.neon-message {
+  background: rgba(255, 85, 85, 0.2);
+  margin-right: auto;
+  border: 1px solid #ff5555;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
